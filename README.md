@@ -4,7 +4,23 @@
 pip install -r requirements.txt
 ```
 
-# como rodar o código?
+# Inciar o alembic
 ```bash
-python -m uvicorn app.main:reload --reload
+python -m alembic init migrations
+```
+
+# Gerar a migration
+```bash
+python -m alembic revision --autogenerate -m "Criar tabela usuarios"
+```
+
+# Aplicar a migration
+```bash
+python -m alembic upgrade head
+```
+
+
+# Como rodar o código:
+```bash
+python -m uvicorn app.main:app --reload
 ```

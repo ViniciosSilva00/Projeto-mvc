@@ -1,5 +1,5 @@
 from sqlalchemy import Column, Integer, String, Boolean, DateTime
-from sqlalchemy.sql import func
+from sqlalchemy.sql import func 
 from app.database import Base
 
 #Cria tabela usuario
@@ -14,11 +14,10 @@ class Usuario(Base):
 
     senha_hash = Column(String(255), nullable=False)
 
-    #Prefil do usuário: admin ou operador
+    #Perfil do usuário: admin ou operador 
     role = Column(String(20), nullable=False, default="operador")
 
     ativo = Column(Boolean, default=True)
 
-    #Preenchido automatico pelo banco de dados ao criar o registro
-    criado_em = Column(DateTime, server_default=func.now())
-    
+    #preenchido automatico pelo banco de dados ao criar o registro
+    criando_em = Column(DateTime, server_default=func.now())
