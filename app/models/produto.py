@@ -27,4 +27,4 @@ class Produto(Base):
         else:
             return "/static/img/produto-placeholder.png"
         
-    produto.ima
+    
